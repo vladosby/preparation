@@ -17,6 +17,21 @@ class Main {
     public static void main(String[] args) {
         Thread helloWorldThread = new HelloWorldThread();
         helloWorldThread.setName("helloWorldThread");
+
+        Thread anonymousThread = new Thread(() -> {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Running anonymous thread...");
+            System.out.println(Thread.currentThread().getName());
+        });
+
+        anonymousThread.setName("anonymousThread");
+
+        anonymousThread.start();
         helloWorldThread.start();
     }
 }
