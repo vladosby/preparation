@@ -38,7 +38,27 @@ class Main {
 
         anonymousThread.setName("anonymousThread");
 
+        TestRunnable testRunnable = new TestRunnable();
+        Thread testRunnableThread = new Thread(testRunnable, "testRunnableThread");
+
         anonymousThread.start();
         helloWorldThread.start();
+        testRunnableThread.start();
+    }
+}
+
+
+class TestRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Runnable working....");
+        System.out.println(Thread.currentThread().getName());
     }
 }
