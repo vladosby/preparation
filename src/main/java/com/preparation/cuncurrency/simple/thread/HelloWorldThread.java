@@ -6,17 +6,24 @@ package com.preparation.cuncurrency.simple.thread;
  * @created: 9/13/2017
  */
 public class HelloWorldThread extends Thread {
+
+    public HelloWorldThread() {
+    }
+
+    public HelloWorldThread(String name) {
+        super(name);
+    }
+
     @Override
     public void run() {
         System.out.println("Hello world");
-        System.out.println(Thread.currentThread().getName());
+        System.out.println(getName());
     }
 }
 
 class Main {
     public static void main(String[] args) {
-        Thread helloWorldThread = new HelloWorldThread();
-        helloWorldThread.setName("helloWorldThread");
+        Thread helloWorldThread = new HelloWorldThread("helloWorldThread");
 
         Thread anonymousThread = new Thread(() -> {
             try {
