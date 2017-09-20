@@ -26,6 +26,5 @@ class Main {
         System.out.println(EnumExample.BIG.getSize());
         System.out.println(EnumExample.BIG.name());
         System.out.println(EnumExample.BIG.ordinal());
-        System.out.println(EnumExample.BIG.);
     }
 }
