@@ -17,7 +17,7 @@ public class InsertionSort {
         for (int i = 1; i < array.length; i++) {
             int newIndex = i;
             for (int j = i - 1; j >= 0; j--) {
-                if (array[j] > array[newIndex]) {
+                if (array[j].compareTo(array[newIndex]) > 0) {
                     swap(array, newIndex, j);
                     newIndex = j;
                 } else {

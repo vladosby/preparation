@@ -17,7 +17,7 @@ public class BubbleSort {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length - 1 - i; j++) {
                 int nextItemIndex = j + 1;
-                if (array[j] > array[nextItemIndex]) {
+                if (array[j].compareTo(array[nextItemIndex]) > 0) {
                     swap(array, j, nextItemIndex);
                 }
             }
